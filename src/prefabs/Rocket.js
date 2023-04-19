@@ -3,7 +3,7 @@ class Rocket extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
       super(scene, x, y, texture, frame);
 
-      //console.log("rocket");
+      console.log("rocket");
   
       // add object to existing scene
       scene.add.existing(this);
@@ -33,5 +33,11 @@ class Rocket extends Phaser.GameObjects.Sprite {
             this.isFiring = false; 
             this.y = game.config.height - borderUISize - borderPadding; 
         }
+    }
+
+    // reset rocket to "ground"
+    reset() {
+        this.isFiring = false; 
+        this.y = game.config.height - borderUISize - borderPadding; 
     }
 }
